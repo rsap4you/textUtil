@@ -1,4 +1,6 @@
 import './App.css';
+import logo from './logo-1.jpg';
+
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import About from './components/About';
@@ -40,8 +42,10 @@ function App() {
   return (
     <>
     <Router>
-    <Navbar title="RSAP4YOU" mode={mode} toggleMode={toggleMode} key={new Date()} />
+      
+    <Navbar  title="RSAP4YOU"  mode={mode} toggleMode={toggleMode} key={new Date()} />
     <Alert alert={alert}/>
+     
     <div className="container my-3">
     <Switch>
     {/* /users --> Component 1
@@ -51,7 +55,9 @@ function App() {
           </Route>
           <Route exact path="/">
             {/* <TextForm showAlert={showAlert} heading="Try TextUtils - word counter, character counter, remove extra spaces" mode={mode}/> */}
-            <TextForm showAlert={showAlert} heading="RSAP4YOU By Amarjeet Kumar" mode={mode}/>
+  
+              <img src={logo} alt="Logo" />
+            <TextForm showAlert={showAlert} heading=" TextUtils " mode={mode}/>
           </Route>
     </Switch>
     </div>

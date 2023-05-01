@@ -18,12 +18,17 @@ export default function About(props) {
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingOne">
                     <button className="accordion-button" type="button" style={myStyle} data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    <strong>Who is founder of RSAP4YOU jiihoibhk </strong>
+                    <strong>Who is founder of RSAP4YOU ?</strong>
                     </button>
                     </h2>
                     <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div className="accordion-body" style={myStyle}>
-                   kumar Amarjeet raj is the Co OR Founder of RSAP4YOU in 2016 you also visit youtube channel herf="https://www.youtube.com/@rsap4you503"
+                   <h5>kumar Amarjeet raj is the Co OR Founder of RSAP4YOU in 2016 you also visit youtube channel</h5> 
+                   <span>E-mail:kumaramarjeetraj7725@gmail.com</span><br></br>
+                   <span>Mobile: 9408322135</span>
+                   <p>youtube: https://www.youtube.com/@rsap4you503</p>
+                   <p>insta: @kumar_amarjeet_raj</p>
+                   <p>facebook: Amarjeet Kumar</p>
                     </div>
                     </div>
                 </div>
