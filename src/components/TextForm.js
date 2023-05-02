@@ -36,6 +36,18 @@ export default function TextForm(props) {
         props.showAlert("Extra spaces removed!", "success");
     }
 
+    const handlechar = () => {
+        let newText = text.split(/[ a-zA-z]+/);
+        setText(newText.join(""));
+        props.showAlert("Extract Number!", "success");
+    }
+
+    const handlenumber = () => {
+        let newText = text.split(/[ 0-9]+/);
+        setText(newText.join(""));
+        props.showAlert("Extract Number!", "success");
+    }
+
     // const handleExtractNumber = () => {
     //     let newText = text.split(/[ ]+/);
     //     setText(newText.join(" "));
@@ -73,7 +85,7 @@ const handleCapitalizeWordClick = () => {
     let newText = newWords.join(" ");
     setText(newText);
   };
-
+    
     const [text, setText] = useState(''); 
     return (
         <>
@@ -84,11 +96,14 @@ const handleCapitalizeWordClick = () => {
             <textarea className="form-control" value={text} onChange={handleOnChange1} style={{backgroundColor: props.mode==='dark'?'#13466e':'white', color: props.mode==='dark'?'white':'#042743'}} id="myBox" rows="8"></textarea>
             </div>
             <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleClearClick}>Clear Text </button>
-            <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleCapitalizeWordClick}>Case Sensetive </button>
+            {/* <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={countVowel}>countVowel </button> */}
+            <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleCapitalizeWordClick}>Case Sencetive </button>
             <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleUpClick1}>Convert to Uppercase </button>
             <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleLoClick1}>Convert to Lowercase </button>
             <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleCopy1}>Copy Text</button>
             <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleExtraSpaces1}>Remove Extra Spaces</button>
+            <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handlechar}>Extract Number</button>
+            <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handlenumber}>Extract character</button>
             
             <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleReverse}>Reverse Text</button>
             <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={textToSpeech}>&#127908; Speak Text </button>
@@ -97,6 +112,7 @@ const handleCapitalizeWordClick = () => {
             <h2>Your text summary</h2>
             <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
             <p>{0.008 *  text.split(/\s+/).filter((element)=>{return element.length!==0}).length} Minutes read</p>
+           
             <h2>Preview</h2>
             <p>{text.length>0?text:"Nothing to preview!"}</p>
 
