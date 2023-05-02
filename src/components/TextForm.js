@@ -45,7 +45,7 @@ export default function TextForm(props) {
     const handlenumber = () => {
         let newText = text.split(/[0-9]+/);
         setText(newText.join(""));
-        props.showAlert("Extract Number!", "success");
+        props.showAlert("Extract Character !", "success");
     }
 
     // const handleExtractNumber = () => {
