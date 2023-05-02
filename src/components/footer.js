@@ -5,6 +5,7 @@ import logo1 from '../src1.png'
 import logo2 from '../src2.png'
 import logo3 from '../src3.png'
 import logo4 from '../src4.png'
+import logo5 from '../src5.png'
 
 const Footer = () => {
   // Define the data for the footer
@@ -27,7 +28,7 @@ const Footer = () => {
       title: "picture 1",
       resources: [
         {
-            name: <img src={logo1} width="100%" height="65%" alt="" />
+            name: <img src={logo5} width="100%" height="65%" alt="" />
           },
           
       ],
@@ -66,7 +67,7 @@ const Footer = () => {
         title: "picture 5",
       resources: [
         {
-            name: <img src={logo4} width="100%" height="65%" alt="" />
+            name: <img src={logo1} width="100%" height="65%" alt="" />
            
           },
           
