@@ -43,7 +43,7 @@ function App() {
     <>
     <Router>
       
-    <Navbar  img src={logo} width="5%"  title="RSAP4YOU"  mode={mode} toggleMode={toggleMode} key={new Date()} />
+    <Navbar logo={logo} width="5%"  title="RSAP4YOU"  mode={mode} toggleMode={toggleMode} key={new Date()} />
     <Alert alert={alert}/>
      
     <div className="container my-3">
@@ -56,7 +56,7 @@ function App() {
           <Route exact path="/">
             {/* <TextForm showAlert={showAlert} heading="Try TextUtils - word counter, character counter, remove extra spaces" mode={mode}/> */}
   
-              <img src={logo} width="5%" alt="Logo" />
+             
             <TextForm showAlert={showAlert} heading=" TextUtils " mode={mode}/>
           </Route>
     </Switch>
