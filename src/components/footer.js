@@ -9,13 +9,13 @@ import logo4 from '../src4.png'
 const Footer = () => {
   // Define the data for the footer
   const description =
-    "CEO/Fonder: Kumar Amarjeet RAJ student of Government MCA College,Maninagar(East),Ahmedabad  and Currently Trainee in Hyperlink Infosytem  India's Top app Development Company";
+    "CEO/Fonder: Kumar Amarjeet RAJ student of Government MCA College,Maninagar(East),Ahmedabad  and Currently Trainee in Hyperlink Infosytem  India's Top app Development Company.";
   const title = "RSAP4YOU";
 
   const columns = [
     
     {
-        title: "picture 1",
+        title: "Logo",
       resources: [
         {
           name: <img src={logo} alt="Logo" />
@@ -26,7 +26,7 @@ const Footer = () => {
       ],
     },
     {
-      title: "picture 2",
+      title: "picture 1",
       resources: [
         {
             name: <img src={logo1} width="100%" height="65%" alt="" />
@@ -35,7 +35,7 @@ const Footer = () => {
       ],
     },
     {
-        title: "picture 3",
+        title: "picture 2",
       resources: [
         {
             name: <img src={logo2} width="100%" height="65%" alt="" />
@@ -45,7 +45,7 @@ const Footer = () => {
       ],
     },
     {
-        title: "picture 4",
+        title: "picture 3",
       resources: [
         {
             name: <img src={logo3} width="100%" height="65%" alt="" />
@@ -55,7 +55,7 @@ const Footer = () => {
       ],
     },
     {
-        title: "picture 5",
+        title: "picture 4",
       resources: [
         {
             name: <img src={logo4} width="100%" height="65%" alt="" />
@@ -69,13 +69,14 @@ const Footer = () => {
   return (
     <SimpleReactFooter
       description={description}
-      title={title}
+      title= {title}
       columns={columns}
-      linkedin=""
-      facebook="lorem_ipsum_on_fb"
-      twitter="lorem_ipsum_on_twitter"
-      instagram="lorem_ipsum_live"
-      youtube="https://www.youtube.com/channel/UCIUsuwUh5_TtpWCmwMkyXQQ"
+ 
+      facebook="profile.php?id=100041391041692&mibextid=ZbWKwL"
+      twitter="kumar_amarjeet_raj_on_linkedin"
+      instagram="https://twitter.com/jaketrent"
+      linkedin="fluffy_cat_on_twitter="
+      youtube="UCIUsuwUh5_TtpWCmwMkyXQQ"
       pinterest="lorem_ipsum_collections"
       copyright="@RSAP4YOU 2023"
       iconColor="black"
