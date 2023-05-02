@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: rgb(92, 75, 248);
+  color: rgb(31, 14, 190);
 }
 
 .App-link {
@@ -39,4 +39,8 @@
 
 .blank{
   color: rgb(8, 246, 135);
+}
+
+#button{
+  background-color: #0694bb;
 }

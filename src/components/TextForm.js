@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-
+import '../App.css';
 
 export default function TextForm(props) {
     const handleUpClick1 = ()=>{
@@ -43,7 +43,7 @@ export default function TextForm(props) {
     }
 
     const handlenumber = () => {
-        let newText = text.split(/[ 0-9]+/);
+        let newText = text.split(/[0-9]+/);
         setText(newText.join(""));
         props.showAlert("Extract Number!", "success");
     }
@@ -90,7 +90,7 @@ const handleCapitalizeWordClick = () => {
     return (
         <>
         
-        <div className="container" style={{color: props.mode==='dark'?'white':'#042743'}}> 
+        <div className="container" style={{color: props.mode==='dark'?'white':'rgb(213 88 14)'}}> 
             <h1 className='mb-4'>{props.heading}</h1>
             <div className="mb-3"> 
             <textarea className="form-control" value={text} onChange={handleOnChange1} style={{backgroundColor: props.mode==='dark'?'#13466e':'white', color: props.mode==='dark'?'white':'#042743'}} id="myBox" rows="8"></textarea>
@@ -108,7 +108,7 @@ const handleCapitalizeWordClick = () => {
             <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleReverse}>Reverse Text</button>
             <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={textToSpeech}>&#127908; Speak Text </button>
         </div>
-        <div className="container my-3" style={{color: props.mode==='dark'?'white':'#042743'}}>
+        <div className="container my-3" style={{color: props.mode==='dark'?'white':'#0  42743'}}>
             <h2>Your text summary</h2>
             <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
             <p>{0.008 *  text.split(/\s+/).filter((element)=>{return element.length!==0}).length} Minutes read</p>

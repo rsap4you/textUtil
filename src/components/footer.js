@@ -21,8 +21,6 @@ const Footer = () => {
           name: <img src={logo} alt="Logo" />
          
         },
-        
-    
       ],
     },
     {
@@ -56,6 +54,16 @@ const Footer = () => {
     },
     {
         title: "picture 4",
+      resources: [
+        {
+            name: <img src={logo4} width="100%" height="65%" alt="" />
+           
+          },
+          
+      ],
+    },
+    {
+        title: "picture 5",
       resources: [
         {
             name: <img src={logo4} width="100%" height="65%" alt="" />
