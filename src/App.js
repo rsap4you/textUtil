@@ -2,6 +2,8 @@ import './App.css';
 import logo from './logo-1.jpg';
 
 import Navbar from './components/Navbar';
+import Footer from './components/footer';
+
 import TextForm from './components/TextForm';
 import About from './components/About';
 import React, { useState } from 'react';
@@ -58,9 +60,13 @@ function App() {
   
              
             <TextForm showAlert={showAlert} heading=" TextUtils " mode={mode}/>
+           
           </Route>
+       
     </Switch>
+  
     </div>
+    <Footer/>
     </Router>
     </> 
   );
