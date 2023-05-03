@@ -104,20 +104,20 @@ export default function TextForm(props) {
 
   function runSpeechRecognition() {
     // get output div reference
-    var output = document.getElementById("mybox");
+    var output = document.getElementById("myBox");
     // get action element reference
-    var action = document.getElementById("action");
+    var action = document.getElementById("myBox");
     // new speech recognition object
     var SpeechRecognition =  window.webkitSpeechRecognition ;
     var recognition = new SpeechRecognition();
 
     // This runs when the speech recognition service starts
     recognition.onstart = function() {
-        action.innerHTML = "<small>listening, please speak...</small>";
+        action.innerHTML = "listening, please speak.";
     };
     
     recognition.onspeechend = function() {
-        action.innerHTML = "<small>stopped listening, hope you are done...</small>";
+        action.innerHTML = "stopped listening, hope you are done...";
         recognition.stop();
     }
   
@@ -140,22 +140,22 @@ export default function TextForm(props) {
         <div className="container" style={{color: props.mode==='dark'?'white':'rgb(213 88 14)'}}> 
             <h1 className='mb-4'>{props.heading}</h1>
             <div className="mb-3"> 
-            <textarea className="form-control" value={text} onChange={handleOnChange1} style={{backgroundColor: props.mode==='dark'?'#13466e':'white', color: props.mode==='dark'?'white':'#042743'}} id="myBox" rows="8"></textarea>
-            <div id="mybox" className='hide' style={{color: "black"}}></div>
+            <textarea className="form-control hide" value={text} onChange={handleOnChange1} style={{backgroundColor: props.mode==='dark'?'#13466e':'white', color: props.mode==='dark'?'white':'#042743'}} id="myBox" rows="8"></textarea>
+            {/* <div id="mybox" className='hide' style={{color: "black"}}></div> */}
             </div>
             <button disabled={text.length===-1} className="btn btn-primary mx-1 my-1" onClick={runSpeechRecognition}>&#127908;speak to text </button>
-            <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleClearClick}>Clear Text </button>
-            <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleVoClick}>countVowel </button>
-            <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleCapitalizeWordClick}>Case Sencetive </button>
-            <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleUpClick1}>Convert to Uppercase </button>
-            <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleLoClick1}>Convert to Lowercase </button>
-            <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleCopy1}>Copy Text</button>
-            <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleExtraSpaces1}>Remove Extra Spaces</button>
-            <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handlechar}>Extract Number</button>
-            <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handlenumber}>Extract character</button>
+            <button disabled={text.length===-1} className="btn btn-primary mx-1 my-1" onClick={handleClearClick}>Clear Text </button>
+            <button disabled={text.length===-1} className="btn btn-primary mx-1 my-1" onClick={handleVoClick}>countVowel </button>
+            <button disabled={text.length===-1} className="btn btn-primary mx-1 my-1" onClick={handleCapitalizeWordClick}>Case Sencetive </button>
+            <button disabled={text.length===-1} className="btn btn-primary mx-1 my-1" onClick={handleUpClick1}>Convert to Uppercase </button>
+            <button disabled={text.length===-1} className="btn btn-primary mx-1 my-1" onClick={handleLoClick1}>Convert to Lowercase </button>
+            <button disabled={text.length===-1} className="btn btn-primary mx-1 my-1" onClick={handleCopy1}>Copy Text</button>
+            <button disabled={text.length===-1} className="btn btn-primary mx-1 my-1" onClick={handleExtraSpaces1}>Remove Extra Spaces</button>
+            <button disabled={text.length===-1} className="btn btn-primary mx-1 my-1" onClick={handlechar}>Extract Number</button>
+            <button disabled={text.length===-1} className="btn btn-primary mx-1 my-1" onClick={handlenumber}>Extract character</button>
             
-            <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleReverse}>Reverse Text</button>
-            <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={textToSpeech}>Text to Speak &#127908; </button>
+            <button disabled={text.length===-1} className="btn btn-primary mx-1 my-1" onClick={handleReverse}>Reverse Text</button>
+            <button disabled={text.length===-1} className="btn btn-primary mx-1 my-1" onClick={textToSpeech}>Text to Speak &#127908; </button>
         </div>
         <div className="container my-3" style={{color: props.mode==='dark'?'white':'#0  42743'}}>
             <h2>Your text summary</h2>
@@ -168,7 +168,7 @@ export default function TextForm(props) {
 
             {/* <div id="output" className='hide'></div> */}
 
-            <button type="button" onclick="runSpeechRecognition()">Speech to Text</button> &nbsp; <span id="action"></span>
+            {/* <button type="button" onclick="runSpeechRecognition()">Speech to Text</button> &nbsp; <span id="action"></span> */}
 
         </div>
         </>
