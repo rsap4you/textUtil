@@ -102,6 +102,36 @@ export default function TextForm(props) {
     // console.log("No. of Vowels are: " + countChar);
   };
 
+  function runSpeechRecognition() {
+    // get output div reference
+    var output = document.getElementById("output");
+    // get action element reference
+    var action = document.getElementById("action");
+    // new speech recognition object
+    var SpeechRecognition =  window.webkitSpeechRecognition ;
+    var recognition = new SpeechRecognition();
+
+    // This runs when the speech recognition service starts
+    recognition.onstart = function() {
+        action.innerHTML = "<small>listening, please speak...</small>";
+    };
+    
+    recognition.onspeechend = function() {
+        action.innerHTML = "<small>stopped listening, hope you are done...</small>";
+        recognition.stop();
+    }
+  
+    // This runs when the speech recognition service returns result
+    recognition.onresult = function(event) {
+        var transcript = event.results[0][0].transcript;
+        // var confidence = event.results[0][0].confidence;
+        output.innerHTML = "" + transcript ;
+        output.classList.remove("hide");
+    };
+  
+     // start recognition
+     recognition.start();
+}
     
     const [text, setText] = useState(''); 
     return (
@@ -111,9 +141,11 @@ export default function TextForm(props) {
             <h1 className='mb-4'>{props.heading}</h1>
             <div className="mb-3"> 
             <textarea className="form-control" value={text} onChange={handleOnChange1} style={{backgroundColor: props.mode==='dark'?'#13466e':'white', color: props.mode==='dark'?'white':'#042743'}} id="myBox" rows="8"></textarea>
+            <div id="output" class="hide"></div>
             </div>
             <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleClearClick}>Clear Text </button>
             <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleVoClick}>countVowel </button>
+            <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={runSpeechRecognition}>speak to text </button>
             <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleCapitalizeWordClick}>Case Sencetive </button>
             <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleUpClick1}>Convert to Uppercase </button>
             <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleLoClick1}>Convert to Lowercase </button>
@@ -129,10 +161,14 @@ export default function TextForm(props) {
             <h2>Your text summary</h2>
             <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
             <p>{0.008 *  text.split(/\s+/).filter((element)=>{return element.length!==0}).length} Minutes read</p>
-            <p style={{color: "red"}}>Count Vowels </p> 
-            <p>{count}</p>
+            <p style={{color: "black"}}>Count Vowels </p> 
+            <p>{count} </p>
             <h2>Preview</h2>
             <p>{text.length>0?text:"Nothing to preview!"}</p>
+
+            <div id="output" class="hide"></div>
+
+            <button type="button" onclick="runSpeechRecognition()">Speech to Text</button> &nbsp; <span id="action"></span>
 
         </div>
         </>
