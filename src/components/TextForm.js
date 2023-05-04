@@ -126,18 +126,20 @@ export default function TextForm(props) {
         var transcript = event.results[0][0].transcript;
         // var confidence = event.results[0][0].confidence;
         output.innerHTML = "" + transcript ;
-        output.classList.remove("hide");
+        output.classList.add("hide");
+        // let newText = output.join(" ");
+        // setText(newText);
     };
-  
      // start recognition
      recognition.start();
+     console.log(output)
 }
     
     const [text, setText] = useState(''); 
     return (
         <>
         
-        <div className="container" style={{color: props.mode==='dark'?'white':'rgb(213 88 14)'}}> 
+        <div className="container" style={{color: props.mode==='dark'?'white':'rgb(213 88 14)'}}>   
             <h1 className='mb-4'>{props.heading}</h1>
             <div className="mb-3"> 
             <textarea className="form-control hide" value={text} onChange={handleOnChange1} style={{backgroundColor: props.mode==='dark'?'#13466e':'white', color: props.mode==='dark'?'white':'#042743'}} id="myBox" rows="8"></textarea>
@@ -145,7 +147,7 @@ export default function TextForm(props) {
             </div>
             <button disabled={text.length===-1} className="btn btn-primary mx-1 my-1" onClick={runSpeechRecognition}>&#127908;speak to text </button>
             <button disabled={text.length===-1} className="btn btn-primary mx-1 my-1" onClick={handleClearClick}>Clear Text </button>
-            <button disabled={text.length===-1} className="btn btn-primary mx-1 my-1" onClick={handleVoClick}>countVowel </button>
+            <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleVoClick}>countVowel </button>
             <button disabled={text.length===-1} className="btn btn-primary mx-1 my-1" onClick={handleCapitalizeWordClick}>Case Sencetive </button>
             <button disabled={text.length===-1} className="btn btn-primary mx-1 my-1" onClick={handleUpClick1}>Convert to Uppercase </button>
             <button disabled={text.length===-1} className="btn btn-primary mx-1 my-1" onClick={handleLoClick1}>Convert to Lowercase </button>
