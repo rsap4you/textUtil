@@ -64,7 +64,7 @@ function App() {
           </Route>
        
     </Switch>
-  
+     <script src="//code.tidio.co/zgahkl1twt6ie1oxipsa6kl709znebnq.js" async></script>
     </div><br/>
     <Footer/>
     </Router>
